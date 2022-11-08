@@ -1,5 +1,7 @@
 # Contributing
 
+- [main](README.md)
+
 ## Update dependencies
 
 ```bash

@@ -18,21 +18,32 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+         "Programming Language :: Python :: Implementation :: PyPy",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.8, <4.0",
     packages=setuptools.find_packages(),
+    # package_data={"YYY": ["../artifacts/*"]}, # aditional files to package relative to YYY dir
     install_requires=[
         'python-dateutil',
         'python-decouple',
         'requests',
+        # Pinned version of package on github
+        # "mypackage @ git+ssh://git@github.com/USERNAME/MYPACKAGE.git@v1.2.3",
+        # Pinned version of package in subdirectory of a github repo
+        # "mypackage2 @ git+ssh://git@github.com/USERNAME/MYPACKAGE.git@v1.2.3#subdirectory=plugins/aaa",
     ],
     extras_require={
         'dev': [
+            "black"
+            # 'pylint',
             'pip-tools',
-            'pylint',
             'pytest',
             'yapf',
         ]
     },
+    # Enable the package to be used as a first class CLI command
+    # entry_points={
+    #     "console_scripts": ["YYY=YYY.__main__:main"],
+    # },
 )
