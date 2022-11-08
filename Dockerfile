@@ -7,7 +7,7 @@ FROM python:3.8-slim-buster
 # FROM python:3.8-alpine        # 43Mb
 
 # UBUNTU
-# FROM ubuntu:20.04             # 72.8MB  (before installing python)
+# FROM ubuntu:20.04             # 72.8MB  (before installing python, 400Mb after installing python 3.8)
 
 # NVIDIA CUDA
 # FROM nvidia/cuda:11.2.0-cudnn8-runtime-ubuntu20.04   # 3.17GB (before installing python)
