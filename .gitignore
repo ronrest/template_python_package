@@ -1,6 +1,7 @@
 # BUILD ARTEFACTS
 *.egg-info
 __pycache__
+.pytest_cache
 
 # ENVIRONMENT ARTEFACTS
 .venv

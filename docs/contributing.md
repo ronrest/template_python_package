@@ -16,3 +16,30 @@ pip-compile
 pip-compile setup.py --extra dev -o requirements-dev.txt
 
 ```
+
+
+## Run Tests
+
+```bash
+pytest
+
+```
+
+## Formatting
+
+```bash
+# Print out if any changes would need to be made to formatting of code
+python -m black --check --diff --color ./
+
+# Make actual canges to code formatting
+python -m black ./
+
+```
+
+
+## Docker Image
+
+```bash
+docker build --tag MY_APP_NAME .
+
+```

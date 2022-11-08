@@ -1,7 +1,9 @@
 from . import __version__
 
+
 def main():
-    pass
+    print(f"Version {__version__}")
+
 
 if __name__ == "__main__":
     main()
