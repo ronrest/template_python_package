@@ -40,6 +40,9 @@ python -m black ./
 ## Docker Image
 
 ```bash
+# Build docker image normally
 docker build --tag MY_APP_NAME .
 
+# Build docker image that fetches things from private github repositories
+DOCKER_BUILDKIT=1 docker build --ssh default --tag MY_APP_NAME .
 ```

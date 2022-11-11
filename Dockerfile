@@ -51,6 +51,15 @@ FROM python:3.8-slim-buster
 # COPY requirements.txt ./
 # RUN python -m pip install --no-cache-dir -r requirements.txt
 
+# ALTERNATIVELY, INSTALL FROM PRIVATE REPOS
+# # GET GITHUB CREDENTIALS
+# RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+# # CLONE SOME PRIVATE REPOSITORY
+# RUN --mount=type=ssh git clone git@github.com:myorg/myproject.git myproject
+# # PIP INSTALL WITH SSH CREDENTIALS
+# RUN --mount=type=ssh python -m pip install --no-cache-dir -U pip && \
+#     python -m pip install --no-cache-dir -r requirements.txt
+
 
 # ##############################################################################
 # UNIQUE SETUP CODE HERE
