@@ -20,6 +20,8 @@ FROM python:3.8-slim-buster
 # RUN apt-get update &&\
 #     DEBIAN_FRONTEND=noninteractive apt-get install -y python3 &&\
 #     apt-get install -y pip &&\
+#     apt-get install -y git &&\
+#     apt-get install -y ssh &&\
 #     ln -sf /usr/bin/python3.8 /usr/bin/python &&\
 #     rm -rf /var/lib/apt/lists/*
 
@@ -33,6 +35,7 @@ FROM python:3.8-slim-buster
 #     apt-get install -y curl &&\
 #     curl -sS https://bootstrap.pypa.io/get-pip.py | python &&\
 #     rm -rf /var/lib/apt/lists/*
+
 
 # ##############################################################################
 # PYTHON DEPENDENCIES
@@ -51,8 +54,12 @@ FROM python:3.8-slim-buster
 # COPY requirements.txt ./
 # RUN python -m pip install --no-cache-dir -r requirements.txt
 
-# ALTERNATIVELY, INSTALL FROM PRIVATE REPOS
+# ==========================
+# INSTALL FROM PRIVATE REPOS
+# ==========================
 # # GET GITHUB CREDENTIALS
+# # NOTE: Need the package ssh and git installed.
+# #       Running `apt-get -y install git` will install both.
 # RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 # # CLONE SOME PRIVATE REPOSITORY
 # RUN --mount=type=ssh git clone git@github.com:myorg/myproject.git myproject
