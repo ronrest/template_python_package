@@ -37,7 +37,7 @@ setuptools.setup(
     ],
     extras_require={
         "dev": [
-            "black"
+            "black",
             # "pylint",
             "pip-tools",
             "pytest",
