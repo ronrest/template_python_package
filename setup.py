@@ -26,8 +26,10 @@ setuptools.setup(
     # package_data={"YYY": ["../artifacts/*"]}, # aditional files to package relative to YYY dir
     install_requires=[
         "python-dateutil",
-        "python-decouple",
+        "python-dotenv",        # Get environment variables from env file
+        # "python-decouple",    # alternative to dotenv
         "requests",
+        # "fire", # To create as a cli tool
         # Pinned version of package on github
         # "mypackage @ git+ssh://git@github.com/USERNAME/MYPACKAGE.git@v1.2.3",
         # Pinned version of package in subdirectory of a github repo
