@@ -29,7 +29,7 @@ setuptools.setup(
         "python-dotenv",  # Get environment variables from env file
         # "python-decouple",  # alternative to dotenv
         "requests",
-        # "fire", # To create as a cli tool
+        # "fire",  # To create as a cli tool
         # Pinned version of package on github
         # "mypackage @ git+ssh://git@github.com/USERNAME/MYPACKAGE.git@v1.2.3",
         # Pinned version of package in subdirectory of a github repo
