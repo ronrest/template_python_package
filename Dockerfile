@@ -57,13 +57,17 @@ FROM python:3.8-slim-buster
 # ==========================
 # INSTALL FROM PRIVATE REPOS
 # ==========================
-# # GET GITHUB CREDENTIALS
-# # NOTE: Need the package ssh and git installed.
-# #       Running `apt-get -y install git` will install both.
+# # 0. PREREQUISITES
+# #    Need the package ssh and git installed.
+# #    Running `apt-get -y install git` will install both.
+
+# # 1. GET GITHUB CREDENTIALS
 # RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
-# # CLONE SOME PRIVATE REPOSITORY
+
+# # 2a. CLONE SOME PRIVATE REPOSITORY (USING SSH CREDENTIALS)
 # RUN --mount=type=ssh git clone git@github.com:myorg/myproject.git myproject
-# # PIP INSTALL WITH SSH CREDENTIALS
+
+# # 2b. PIP INSTALL FROM PRIVATE REPOSITORY (USING SSH CREDENTIALS)
 # RUN --mount=type=ssh python -m pip install --no-cache-dir -U pip && \
 #     python -m pip install --no-cache-dir -r requirements.txt
 
