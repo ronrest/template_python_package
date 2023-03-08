@@ -12,18 +12,56 @@ if __name__ == "__main__":
 # ========================
 # SET IT UP AS A CLI TOOL
 # ========================
+# import json
+# import datetime
+#
 # import fire
-
-# from .package import SomeClass
-# from .package2 import SomeFunc
-# from . import __version__
-
-
-# def main():
+#
+# from .package1 import SomeClass1
+# from .package2 import SomeClass2
+# from .package3 import some_func1
+#
+#
+# class CustomJSONEncoder(json.JSONEncoder):
+#     """Custom JSON Encoder that formats objects not usually liked by JSON"""
+#
+#     def default(self, obj):
+#         if isinstance(obj, datetime.datetime):
+#             return obj.isoformat()
+#         elif isinstance(obj, set):
+#             return list(obj)
+#         elif isinstance(obj, (bytes, bytearray)):
+#             return obj.decode("utf-8")
+#         else:
+#             try:
+#                 return super().default(obj)
+#             except:
+#                 return str(obj)
+#
+#
+# def serialize_fire(result):
+#     """Function that formats the outputs of functions used by Fire, before
+#     displaying on terminal.
+#     """
+#     if isinstance(result, dict):
+#         # Convert dicts to JSON trings, and encode them safely using a custom
+#         # encoder (eg, to deal with datetimes, and other objects that JSON does
+#         # not like).
+#         return json.dumps(result, cls=CustomJSONEncoder)
+#     return result
+#
+#
+# def cli():
 #     fire.Fire(
 #         dict(
-#             func1=SomeFunc,
-#             class1=SomeClass(),
+#             aaa=some_func1,
+#             subsectB=SomeClass1(),
+#             subsectC=SomeClass2().anotherClass,
 #             version=str(__version__),
-#         )
+#         ),
+#         serialize=serialize_fire,
 #     )
+#
+#
+# if __name__ == "__main__":
+#     cli()

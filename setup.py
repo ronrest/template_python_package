@@ -45,6 +45,7 @@ setuptools.setup(
         ]
     },
     # Enable the package to be used as a first class CLI command
+    # E.g. `mypackage arg1 arg2` instead of `python mypackage.py arg1 arg2`
     # entry_points={
     #     "console_scripts": ["YYY=YYY.__main__:main"],
     # },
